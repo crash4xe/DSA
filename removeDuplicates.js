@@ -13,17 +13,18 @@ function removeDuplicates(arr, n) {
 
 console.log(removeDuplicates([1, 2, 2, 2, 3], 5));
 
-//Two Pointer
+//Two Pointer - used to bring all
 function getLength(arr, n) {
   let i = 0;
   for (let j = 1; j < n; j++) {
     if (arr[i] !== arr[j]) {
       i++;
+      arr[i] = arr[j];
     }
   }
 
-  return i + 1;
+  return arr;
 }
-console.log(getLength([1, 2, 2, 3, 3], 5));
+console.log(getLength([1, 1, 2], 3));
 
 //Advanced approach: use other data structure as set to get unique element and then length
